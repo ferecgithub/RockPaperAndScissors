@@ -126,12 +126,21 @@ class GameScreenFragment : BaseFragment<MainViewModel, FragmentGameScreenBinding
         }
 
         binding.gameStateIv.visibility = View.VISIBLE
-        viewModel.resetAllValues()
+
 
         binding.playAgainBtn.setOnClickListener {
+            viewModel.resetAllValues()
+            resetAllStaticValues()
             findNavController().navigate(R.id.action_gameScreenFragment_to_pickScreenFragment)
         }
 
+    }
+
+    private fun resetAllStaticValues() {
+        computerMove = ""
+        playerMove = ""
+        playerPoint = 0
+        computerPoint = 0
     }
 
     private fun populateGameContinues() {
