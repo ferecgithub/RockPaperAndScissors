@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".view.activities.main_activity.fragments.GameScreenFragment">
+
+    <ImageView
+        android:id="@+id/computerHand_iv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@id/guideline6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/big_hand_rock" />
+
+    <ImageView
+        android:id="@+id/playerHand_iv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@id/guideline8"
+        app:layout_constraintTop_toBottomOf="@id/guideline7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="226dp"
+        tools:src="@drawable/big_hand_paper_player" />
+
+    <ImageView
+        android:id="@+id/gameState_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/general_margin"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:src="@drawable/its_win" />
+
+    <Button
+        android:id="@+id/playAgain_btn"
+        android:layout_width="@dimen/big_btn_width"
+        android:layout_height="@dimen/big_btn_height"
+        android:layout_margin="@dimen/general_margin"
+        android:background="@drawable/btn_background"
+        android:fontFamily="@font/play_bold"
+        android:textAllCaps="false"
+        android:textSize="@dimen/big_btn_textSize"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@id/guideline7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/next_round" />
+
+    <TextView
+        android:id="@+id/computerPointTitle_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/play_bold"
+        android:text="@string/computer_point_title"
+        android:textColor="@color/text_color_dark"
+        android:textSize="@dimen/title_textSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline8"
+        android:layout_margin="@dimen/general_margin" />
+
+    <TextView
+        android:id="@+id/computerPoints_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/computerPointTitle_tv"
+        app:layout_constraintTop_toBottomOf="@id/guideline8"
+        android:layout_margin="@dimen/general_margin"
+        android:fontFamily="@font/play_bold"
+        tools:text="0"
+        android:textColor="@color/text_color_dark"
+        android:textSize="@dimen/title_textSize" />
+
+    <TextView
+        android:id="@+id/playerPointTitle_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/playerPoints_tv"
+        app:layout_constraintTop_toBottomOf="@id/guideline8"
+        android:layout_margin="@dimen/general_margin"
+        android:fontFamily="@font/play_bold"
+        android:text="@string/player_point_title"
+        android:textColor="@color/text_color_dark"
+        android:textSize="@dimen/title_textSize" />
+
+    <TextView
+        android:id="@+id/playerPoints_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline8"
+        android:layout_margin="@dimen/general_margin"
+        android:fontFamily="@font/play_bold"
+        tools:text="0"
+        android:textColor="@color/text_color_dark"
+        android:textSize="@dimen/title_textSize" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

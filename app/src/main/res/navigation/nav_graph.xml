@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startScreenFragment">
+
+    <fragment
+        android:id="@+id/startScreenFragment"
+        android:name="com.ferechamitbeyli.rockpaperscissorskotlin.view.activities.main_activity.fragments.StartScreenFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startScreenFragment_to_pickScreenFragment"
+            app:destination="@id/pickScreenFragment"
+            app:popUpTo="@id/pickScreenFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickScreenFragment"
+        android:name="com.ferechamitbeyli.rockpaperscissorskotlin.view.activities.main_activity.fragments.PickScreenFragment"
+        android:label="fragment_pick"
+        tools:layout="@layout/fragment_pick" >
+        <action
+            android:id="@+id/action_pickScreenFragment_to_gameScreenFragment"
+            app:destination="@id/gameScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameScreenFragment"
+        android:name="com.ferechamitbeyli.rockpaperscissorskotlin.view.activities.main_activity.fragments.GameScreenFragment"
+        android:label="fragment_game_screen"
+        tools:layout="@layout/fragment_game_screen" >
+        <action
+            android:id="@+id/action_gameScreenFragment_to_pickScreenFragment"
+            app:destination="@id/pickScreenFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+</navigation>

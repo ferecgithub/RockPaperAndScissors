@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="big_btn_width">300dp</dimen>
+    <dimen name="big_btn_height">80dp</dimen>
+    <dimen name="big_btn_textSize">36sp</dimen>
+
+    <dimen name="title_textSize">36sp</dimen>
+    <dimen name="bigTitle_textSize">48sp</dimen>
+
+    <dimen name="option_topMargin">16dp</dimen>
+    <dimen name="general_margin">16dp</dimen>
+
+
+</resources>

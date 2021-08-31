@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RockPaperScissorsKotlin</string>
+
+    <string name="pick_your_move">Pick your move</string>
+    <string name="computer_point_title">PC :</string>
+    <string name="player_point_title">You :</string>
+    <string name="play_again">Play Again</string>
+    <string name="next_round">Next Round</string>
+    <string name="start">Start</string>
+</resources>
