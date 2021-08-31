@@ -15,9 +15,12 @@ import kotlinx.coroutines.launch
 
 class GameScreenFragment : BaseFragment<MainViewModel, FragmentGameScreenBinding>() {
 
-    private var computerMove = ""
-    private var playerMove = ""
-
+    companion object {
+        private var computerMove = ""
+        private var playerMove = ""
+        private var playerPoint = 0
+        private var computerPoint = 0
+    }
 
     override fun getViewModel() = MainViewModel::class.java
 
@@ -28,6 +31,9 @@ class GameScreenFragment : BaseFragment<MainViewModel, FragmentGameScreenBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        getMoves()
+        getPoints()
 
         binding.playAgainBtn.setOnClickListener {
             populateAll()
@@ -62,8 +68,6 @@ class GameScreenFragment : BaseFragment<MainViewModel, FragmentGameScreenBinding
     }
 
     private fun getPoints() = viewLifecycleOwner.lifecycleScope.launch {
-        var playerPoint = 0
-        var computerPoint = 0
 
         viewModel.getComputerPoints()
         viewModel.computerPoint.observe(viewLifecycleOwner, {
