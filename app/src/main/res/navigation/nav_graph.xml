@@ -33,6 +33,7 @@
         <action
             android:id="@+id/action_gameScreenFragment_to_pickScreenFragment"
             app:destination="@id/pickScreenFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/gameScreenFragment" />
     </fragment>
 </navigation>

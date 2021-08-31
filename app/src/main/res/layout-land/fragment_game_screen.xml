@@ -51,7 +51,7 @@
         android:layout_margin="@dimen/general_margin"
         android:background="@drawable/btn_background"
         android:fontFamily="@font/play_bold"
-        android:text="@string/next_round"
+        android:text="@string/shoot"
         android:textAllCaps="false"
         android:textSize="@dimen/big_btn_textSize"
         app:backgroundTint="@null"

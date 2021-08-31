@@ -6,5 +6,6 @@
     <string name="player_point_title">You :</string>
     <string name="play_again">Play Again</string>
     <string name="next_round">Next Round</string>
+    <string name="shoot">Shoot!</string>
     <string name="start">Start</string>
 </resources>
