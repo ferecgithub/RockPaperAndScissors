@@ -70,6 +70,7 @@ class MainViewModel : ViewModel() {
         staticComputerPoints = 0
     }
 
+
     fun randomlySelectComputerMove(): String = MOVES.values().random().name
 
     /**  ---------------- Gameplay Functions ----------------  **/

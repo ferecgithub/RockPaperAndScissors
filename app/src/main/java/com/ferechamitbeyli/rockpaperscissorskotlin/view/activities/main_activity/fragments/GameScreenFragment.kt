@@ -18,8 +18,6 @@ class GameScreenFragment : BaseFragment<MainViewModel, FragmentGameScreenBinding
     companion object {
         private var computerMove = ""
         private var playerMove = ""
-        private var playerPoint = 0
-        private var computerPoint = 0
     }
 
     override fun getViewModel() = MainViewModel::class.java
@@ -42,13 +40,11 @@ class GameScreenFragment : BaseFragment<MainViewModel, FragmentGameScreenBinding
     }
 
     private fun checkIfGameIsOver(): Boolean {
-        var result = false
         viewModel.getTurn()
-        viewModel.turnNr.observe(viewLifecycleOwner, {
-            if (it >= 3) {
-                result = true
-            }
-        })
+
+        val result = viewModel.turnNr.value?.let {
+            it > 3
+        } ?: false
 
         return result
     }
@@ -71,16 +67,13 @@ class GameScreenFragment : BaseFragment<MainViewModel, FragmentGameScreenBinding
 
         viewModel.getComputerPoints()
         viewModel.computerPoint.observe(viewLifecycleOwner, {
-            computerPoint = it
+            binding.computerPointsTv.text = it.toString()
         })
 
         viewModel.getPlayerPoints()
         viewModel.playerPoint.observe(viewLifecycleOwner, {
-            playerPoint = it
+            binding.playerPointsTv.text = it.toString()
         })
-
-        binding.playerPointsTv.text = playerPoint.toString()
-        binding.computerPointsTv.text = computerPoint.toString()
 
     }
 
@@ -139,8 +132,6 @@ class GameScreenFragment : BaseFragment<MainViewModel, FragmentGameScreenBinding
     private fun resetAllStaticValues() {
         computerMove = ""
         playerMove = ""
-        playerPoint = 0
-        computerPoint = 0
     }
 
     private fun populateGameContinues() {
